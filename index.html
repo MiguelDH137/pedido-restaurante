@@ -18,36 +18,62 @@
             <form id="form-pedido">
 
                 <div id="form-name">
-                    <label for="name-input">Ingrese su nombre</label>
-                    <input type="text" id="name-input">
+                    <label for="input-name">Ingrese su nombre</label>
+                    <input type="text" id="input-name">
                 </div>
 
                 <div id="form-food">
-                    <label for="food-select">Seleccione el plato para el pedido</label>
-                    <select id="food-select">
+                    <label for="select-food">Seleccione el plato para el pedido</label>
+                    <select id="select-food">
                         <option value="" selected disabled>Seleccione el plato para el pedido</option>
-                        <option value="pizza">Pizza</option>
-                        <option value="pasticho">Pasticho</option>
-                        <option value="pasta">Pasta</option>
-                        <option value="postre">Postre</option>
-                        <option value="ensalada">Ensalada</option>
+                        <option value="Pizza">Pizza</option>
+                        <option value="Pasticho">Pasticho</option>
+                        <option value="Pasta">Pasta</option>
+                        <option value="Hamburguesa">Hamburguesa</option>
+                        <option value="Ensalada">Ensalada</option>
+                        <option value="">No agregar</option>
                     </select>
                 </div>
 
-                <div id="form-addres">
-                    <label for="addres-input">Ingrese la direccion del pedido</label>
-                    <input type="text" id="addres-input">
+                <div id="form-drink">
+                    <label for="select-drink">Seleccione el bebida para el pedido</label>
+                    <select id="select-drink">
+                        <option value="" selected disabled>Seleccione el plato para el pedido</option>
+                        <option value="Refresco">Refresco</option>
+                        <option value="Te">Te</option>
+                        <option value="Cafe">Cafe</option>
+                        <option value="Agua">Agua</option>
+                        <option value="Jugo">Jugo</option>
+                        <option value="">No agregar</option>
+                    </select>
                 </div>
 
-                <div id="form-btn">
-                    <button type="submit">REALIZAR PEDIDO</button>
+                <div id="form-dessert">
+                    <label for="select-dessert">Seleccione el postre para el pedido</label>
+                    <select id="select-dessert">
+                        <option value="" selected disabled>Seleccione el plato para el pedido</option>
+                        <option value="Pastel">Pastel</option>
+                        <option value="Helado">Helado</option>
+                        <option value="Fresas con crema">Fresas con crema</option>
+                        <option value="">No agregar</option>
+
+                    </select>
+                </div>
+
+                <div id="container-form-btn">
+                    <button id="form-btn" type="submit">REALIZAR PEDIDO</button>
+                </div>
+
+                <div id="container-form-msg">
+                    <span id="form-msg"></span>
                 </div>
 
             </form>
         </div>
 
-        <div id="pedido-tarjeta">
+        <div id="container-card-pedido">
             <h3>Realice un pedido y el proceso se mostrara aqui!</h3>
+            <span id="card-pedido"></span>
         </div>
 
     </div>
