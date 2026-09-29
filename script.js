@@ -13,6 +13,7 @@ const formMsg = document.querySelector('#form-msg');
 const formBtn = document.querySelector('#form-btn');
 // selectores de la tarjeta de rendderizado
 const cardPedido = document.querySelector('#card-pedido');
+const tempReinicio = document.querySelector('#temp-reinicio')
 
 // ========== FUNCIONES ========== //
 const ordenarPedido = (userName, mensajePedido) => {
@@ -36,12 +37,24 @@ const procesarPedido = (respuesta) => {
         console.log(respuesta)
 
         setTimeout(() => {
-            resolve(`> Muchas gracias por ordenar en Freddy Fazbears Pizza`)
-        }, 5000);
+            resolve(`> Muchas gracias por ordenar en Freddy Fazbears Pizza <br><br>`)
+        }, 1000);
     })
 };
 
-// Sintaxis try catch
+const reiniciarPagina = () => {
+    let num = 10;
+    const reinicio = setInterval(() => {
+        tempReinicio.textContent = `El terminal de pedido se reiniciara en ${num} segundos`
+        num--
+        if (num < 0) {
+            clearInterval(reinicio);
+            location.reload()
+        }
+    }, 1000);
+
+};
+
 const realizarPedido = async (userName, mensajePedido) => {
     try {
         const respuesta = await ordenarPedido(userName, mensajePedido);
@@ -49,6 +62,7 @@ const realizarPedido = async (userName, mensajePedido) => {
         const respuestaProcesada = await procesarPedido(respuesta);
         cardPedido.insertAdjacentHTML('beforeend', respuestaProcesada)
         console.log(respuestaProcesada)
+        reiniciarPagina()
 
     } catch (error) {
         cardPedido.insertAdjacentHTML('beforeend', error)
@@ -66,6 +80,8 @@ formPedido.addEventListener('submit', async (event) => {
     const foodSelected = selectFood.value;
     const drinkSelected = selectDrink.value;
     const dessertSelected = selectDessert.value;
+
+    formMsg.textContent = ''
 
     const opcionesPedido = [
         foodSelected ? foodSelected : null,
