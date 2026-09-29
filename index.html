@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freddy Pizza</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <header id="section-logo">
+        <img src="./assets/FNAF-logo.png" alt="logo FNAF">
+    </header>
+
+    <div id="section-pedido">
+
+        <div id="container-form">
+            <form id="form-pedido">
+
+                <div id="form-name">
+                    <label for="name-input">Ingrese su nombre</label>
+                    <input type="text" id="name-input">
+                </div>
+
+                <div id="form-food">
+                    <label for="food-select">Seleccione el plato para el pedido</label>
+                    <select id="food-select">
+                        <option value="" selected disabled>Seleccione el plato para el pedido</option>
+                        <option value="pizza">Pizza</option>
+                        <option value="pasticho">Pasticho</option>
+                        <option value="pasta">Pasta</option>
+                        <option value="postre">Postre</option>
+                        <option value="ensalada">Ensalada</option>
+                    </select>
+                </div>
+
+                <div id="form-addres">
+                    <label for="addres-input">Ingrese la direccion del pedido</label>
+                    <input type="text" id="addres-input">
+                </div>
+
+                <div id="form-btn">
+                    <button type="submit">REALIZAR PEDIDO</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div id="pedido-tarjeta">
+            <h3>Realice un pedido y el proceso se mostrara aqui!</h3>
+        </div>
+
+    </div>
+
+    <footer id="section-footer">
+        <a href="https://github.com/MiguelDH137/pedido-restaurante" target="_blank">Desarrollado por MiguelDH137</a>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
