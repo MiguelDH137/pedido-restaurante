@@ -1,3 +1,157 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    background-image: url(./assets/background.webp);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: green;
+}
+
+#container-body {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#section-logo {
+    display: flex;
+    justify-content: center;
+}
+
+#section-logo img {
+    width: 60%;
+}
+
+#section-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#form-pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid white;
+    padding: 1rem;
+    background-color: black;
+}
+
+#container-form-options {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}
+
+.form-option {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-option input, select {
+    width: 100%;
+    padding: 0.25rem 1rem;
+    border-radius: 1rem;
+    border: 2px solid green;
+    background-color: black;
+    color: green;
+}
+
+.form-option input:focus,
+.form-option select:focus {
+    outline: none;
+    border-color: greenyellow;
+    box-shadow: 0 0 0 3px rgb(173, 255, 47, 0.2);
+}
+
+/* Activar el modo base-select */
+select,
+select::picker(select) {
+    appearance: base-select;
+}
+
+/* Estilizar el el menú desplegado*/
+select::picker(select) {
+    border: 1px solid green;
+    border-radius: 8px;
+    padding: 0.25rem;
+    background-color: black;
+    color: green;
+}
+
+/* Estilizar cada opción */
+option {
+    padding: 0.625rem 1rem;
+    border-radius: 6px;
+}
+
+option:checked {
+    font-weight: 700;
+    background: rgba(74, 144, 217, 0.1);
+}
+
+#container-form-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#form-btn {
+    width: 50%;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: 2px solid green;
+    background-color: black;
+    color: green;
+}
+
+#container-form-msg {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
 .form-invalid {
     color: red;
+}
+
+#container-card-pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid white;
+    padding: 1rem;
+    background-color: black;
+    height: 450px;
+}
+
+#card-pedido {
+    gap: 1rem;
+    text-align: start;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    border-top: 2px solid white;
+    background-color: black;
+    padding: 5%;
+}
+
+footer a {
+    text-decoration: none;
+    color: green;
 }

@@ -7,77 +7,84 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+    <div id="container-body">
+
+        <header id="section-logo">
+            <img src="./assets/FNAF-logo.png" alt="logo FNAF">
+        </header>
     
-    <header id="section-logo">
-        <img src="./assets/FNAF-logo.png" alt="logo FNAF">
-    </header>
+        <div id="section-pedido">
+    
+                <form id="form-pedido">
+                    
+                    <div id="container-form-options">
 
-    <div id="section-pedido">
+                        <div id="form-name" class="form-option">
+                            <label for="input-name">Ingrese su nombre</label>
+                            <input type="text" id="input-name">
+                        </div>
+        
+                        <div id="form-food" class="form-option">
+                            <label for="select-food">Seleccione el plato para el pedido</label>
+                            <select id="select-food">
+                                <option value="" selected disabled>Seleccione el plato para el pedido</option>
+                                <option value="Pizza">Pizza</option>
+                                <option value="Pasticho">Pasticho</option>
+                                <option value="Pasta">Pasta</option>
+                                <option value="Hamburguesa">Hamburguesa</option>
+                                <option value="Ensalada">Ensalada</option>
+                                <option value="">No agregar</option>
+                            </select>
+                        </div>
+        
+                        <div id="form-drink" class="form-option">
+                            <label for="select-drink">Seleccione el bebida para el pedido</label>
+                            <select id="select-drink">
+                                <option value="" selected disabled>Seleccione el plato para el pedido</option>
+                                <option value="Refresco">Refresco</option>
+                                <option value="Te">Te</option>
+                                <option value="Cafe">Cafe</option>
+                                <option value="Agua">Agua</option>
+                                <option value="Jugo">Jugo</option>
+                                <option value="">No agregar</option>
+                            </select>
+                        </div>
+        
+                        <div id="form-dessert" class="form-option">
+                            <label for="select-dessert">Seleccione el postre para el pedido</label>
+                            <select id="select-dessert">
+                                <option value="" selected disabled>Seleccione el plato para el pedido</option>
+                                <option value="Pastel">Pastel</option>
+                                <option value="Helado">Helado</option>
+                                <option value="Fresas con crema">Fresas con crema</option>
+                                <option value="">No agregar</option>
+        
+                            </select>
+                        </div>
 
-        <div id="container-form">
-            <form id="form-pedido">
+                    </div>
 
-                <div id="form-name">
-                    <label for="input-name">Ingrese su nombre</label>
-                    <input type="text" id="input-name">
-                </div>
-
-                <div id="form-food">
-                    <label for="select-food">Seleccione el plato para el pedido</label>
-                    <select id="select-food">
-                        <option value="" selected disabled>Seleccione el plato para el pedido</option>
-                        <option value="Pizza">Pizza</option>
-                        <option value="Pasticho">Pasticho</option>
-                        <option value="Pasta">Pasta</option>
-                        <option value="Hamburguesa">Hamburguesa</option>
-                        <option value="Ensalada">Ensalada</option>
-                        <option value="">No agregar</option>
-                    </select>
-                </div>
-
-                <div id="form-drink">
-                    <label for="select-drink">Seleccione el bebida para el pedido</label>
-                    <select id="select-drink">
-                        <option value="" selected disabled>Seleccione el plato para el pedido</option>
-                        <option value="Refresco">Refresco</option>
-                        <option value="Te">Te</option>
-                        <option value="Cafe">Cafe</option>
-                        <option value="Agua">Agua</option>
-                        <option value="Jugo">Jugo</option>
-                        <option value="">No agregar</option>
-                    </select>
-                </div>
-
-                <div id="form-dessert">
-                    <label for="select-dessert">Seleccione el postre para el pedido</label>
-                    <select id="select-dessert">
-                        <option value="" selected disabled>Seleccione el plato para el pedido</option>
-                        <option value="Pastel">Pastel</option>
-                        <option value="Helado">Helado</option>
-                        <option value="Fresas con crema">Fresas con crema</option>
-                        <option value="">No agregar</option>
-
-                    </select>
-                </div>
-
-                <div id="container-form-btn">
-                    <button id="form-btn" type="submit">REALIZAR PEDIDO</button>
-                </div>
-
-                <div id="container-form-msg">
-                    <span id="form-msg"></span>
-                </div>
-
-            </form>
-        </div>
-
-        <div id="container-card-pedido">
-            <h3>Realice un pedido y el proceso se mostrara aqui!</h3>
-            <span id="card-pedido"></span>
-            <span id="temp-reinicio"></span>
+                    <div id="container-form-btn">
+                        <button id="form-btn" type="submit">REALIZAR PEDIDO</button>
+                    </div>
+    
+                    <div id="container-form-msg">
+                        <span id="form-msg"></span>
+                    </div>
+    
+                </form>
+    
+            <div id="container-card-pedido">
+                <h3>Realice un pedido y el proceso se mostrara aqui!</h3>
+                <span id="card-pedido"></span>
+                <span id="temp-reinicio"></span>
+            </div>
+    
         </div>
 
     </div>
+    
 
     <footer id="section-footer">
         <a href="https://github.com/MiguelDH137/pedido-restaurante" target="_blank">Desarrollado por MiguelDH137</a>
