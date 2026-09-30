@@ -11,16 +11,16 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: green;
+    gap: 1rem;
 }
 
 #container-body {
     width: 100%;
-    padding: 1rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 #section-logo {
@@ -35,7 +35,7 @@ body {
 #section-pedido {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 #form-pedido {
@@ -49,6 +49,7 @@ body {
 }
 
 #container-form-options {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -56,11 +57,14 @@ body {
 }
 
 .form-option {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.form-option input, select {
+.form-option input,
+.form-option select {
+    box-sizing: border-box;
     width: 100%;
     padding: 0.25rem 1rem;
     border-radius: 1rem;
@@ -117,6 +121,12 @@ option:checked {
     color: green;
 }
 
+#form-btn:hover {
+    background: green;
+    color: black;
+    box-shadow: 0 0 0 2px greenyellow;
+}
+
 #container-form-msg {
     width: 100%;
     text-align: center;
@@ -131,16 +141,23 @@ option:checked {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
     border: 2px solid white;
     padding: 1rem;
     background-color: black;
-    height: 450px;
+    height: 425px;
 }
 
 #card-pedido {
+    width: 100%;
+    display: flex;
+    justify-content: start;
     gap: 1rem;
-    text-align: start;
+}
+
+#temp-reinicio {
+    width: 100%;
+    display: flex;
+    justify-content: start;
 }
 
 footer {
@@ -148,10 +165,35 @@ footer {
     width: 100%;
     border-top: 2px solid white;
     background-color: black;
-    padding: 5%;
+    padding: 5% 0%;
 }
 
 footer a {
     text-decoration: none;
     color: green;
+}
+
+@media (min-width: 768px) {
+    #section-logo img {
+        width: 35%;
+    }
+
+    #section-pedido {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #form-pedido {
+        width: 25%;
+    }
+
+    #container-card-pedido {
+        width: 35%;
+        height: 350px;
+    }
+
+footer {
+    padding: 2% 0%;
+}
 }

@@ -18,7 +18,7 @@ const tempReinicio = document.querySelector('#temp-reinicio')
 // ========== FUNCIONES ========== //
 const ordenarPedido = (userName, mensajePedido) => {
     return new Promise((resolve, reject) => {
-        cardPedido.insertAdjacentHTML('beforeend', `> Bienvenido/a A Freddy Fazbears Pizza ${userName}
+        cardPedido.insertAdjacentHTML('beforeend', `> Bienvenido/a ${userName} A Freddy Fazbears Pizza
             <br><br>
             > Estamos enviando su pedido de ${mensajePedido} a la cocina, espere por favor...</>
             <br><br>`);
@@ -26,7 +26,7 @@ const ordenarPedido = (userName, mensajePedido) => {
         setTimeout(() => {
             pedidoEstatus ?
             resolve(`> Su pedido de ${mensajePedido}, ha sido entregado con exito`):
-            reject(`> A ocurrido un error en su pedido...`)
+            reject(`> A ocurrido un error en su pedido...<br><br>`)
         }, 4000);
     })
 };
@@ -43,7 +43,7 @@ const procesarPedido = (respuesta) => {
 };
 
 const reiniciarPagina = () => {
-    let num = 10;
+    let num = 20;
     const reinicio = setInterval(() => {
         tempReinicio.textContent = `> El terminal de pedido se reiniciara en ${num} segundos`
         num--
