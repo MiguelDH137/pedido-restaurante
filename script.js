@@ -57,6 +57,8 @@ const reiniciarPagina = () => {
 
 const realizarPedido = async (userName, mensajePedido) => {
     try {
+        formBtn.disabled = true;
+        formBtn.textContent = 'Procesando...';
         const respuesta = await ordenarPedido(userName, mensajePedido);
 
         const respuestaProcesada = await procesarPedido(respuesta);
