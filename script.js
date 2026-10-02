@@ -25,16 +25,55 @@ const ordenarPedido = (userName, mensajePedido) => {
 
         setTimeout(() => {
             pedidoEstatus ?
-            resolve(`> Su pedido de ${mensajePedido}, ha sido entregado con exito`):
+            resolve(`> Todo su pedido ha sido entregado con exito`):
             reject(`> A ocurrido un error en su pedido...<br><br>`)
         }, 4000);
     })
 };
 
-const procesarPedido = (respuesta) => {
+const ordenarBebida = (drinkSelected) => {
+    return new Promise((resolve, reject) => {
+
+        const pedidoBebida = drinkSelected !== '' ? `> Su pedido de ${drinkSelected} ha sido entregado en su mesa` : `> No se pidio bebida`
+
+        setTimeout(() => {
+            pedidoEstatus ?
+            resolve(cardPedido.insertAdjacentHTML('beforeend', `${pedidoBebida}<br>`)):
+            reject(`Ah ocurrido un error con la entrega de bebida<br>`)
+        }, 1000);
+    })
+};
+
+const ordenarPlato = (foodSelected) => {
+    return new Promise((resolve, reject) => {
+
+        const pedidoPlato = foodSelected !== '' ? `> Su pedido de ${foodSelected} ha sido entregado en su mesa` : `> No se pidio plato<br>`
+
+        setTimeout(() => {
+            pedidoEstatus ?
+            resolve(cardPedido.insertAdjacentHTML('beforeend', `${pedidoPlato}<br>`)):
+            reject(`Ah ocurrido un error con la entrega del plato<br>`)
+        }, 2000);
+    })
+};
+
+const ordenarPostre = (dessertSelected) => {
+    return new Promise((resolve, reject) => {
+
+        const pedidoPostre = dessertSelected !== '' ? `> Su pedido de ${dessertSelected} ha sido entregado en su mesa` : `> No se pidio postre<br>`
+
+        setTimeout(() => {
+            pedidoEstatus ?
+            resolve(cardPedido.insertAdjacentHTML('beforeend', `${pedidoPostre}<br>`)):
+            reject(`Ah ocurrido un error con la entrega del postre<br>`)
+        }, 3000);
+    })
+};
+
+const procesarPedido = (respuesta, respuestaPlato, respuestaBebida, respuestaPostre) => {
     return new Promise((resolve) => {
+        
         cardPedido.insertAdjacentHTML('beforeend', `${respuesta}<br><br>`);
-        console.log(respuesta)
 
         setTimeout(() => {
             resolve(`> Muchas gracias por ordenar en Freddy Fazbears Pizza <br><br>`)
@@ -55,13 +94,17 @@ const reiniciarPagina = () => {
 
 };
 
-const realizarPedido = async (userName, mensajePedido) => {
+const realizarPedido = async (userName, mensajePedido, foodSelected, drinkSelected, dessertSelected) => {
     try {
         formBtn.disabled = true;
         formBtn.textContent = 'Procesando...';
         const respuesta = await ordenarPedido(userName, mensajePedido);
+        const respuestaBebida = await ordenarBebida(drinkSelected);
+        const respuestaPlato = await ordenarPlato(foodSelected);
+        const respuestaPostre = await ordenarPostre(dessertSelected);
 
-        const respuestaProcesada = await procesarPedido(respuesta);
+
+        const respuestaProcesada = await procesarPedido(respuesta, respuestaPlato, respuestaBebida, respuestaPostre);
         cardPedido.insertAdjacentHTML('beforeend', respuestaProcesada)
         console.log(respuestaProcesada)
         reiniciarPagina()
@@ -83,6 +126,7 @@ formPedido.addEventListener('submit', async (event) => {
     const foodSelected = selectFood.value;
     const drinkSelected = selectDrink.value;
     const dessertSelected = selectDessert.value;
+    
 
     formMsg.textContent = ''
 
@@ -97,7 +141,7 @@ formPedido.addEventListener('submit', async (event) => {
         : false
 
     mensajePedido !== false
-        ? realizarPedido(userName, mensajePedido)
+        ? realizarPedido(userName, mensajePedido, foodSelected, drinkSelected, dessertSelected)
         : formMsg.textContent = `No has seleccionado ninguna opcion`
 
     formMsg.classList.toggle('form-invalid', !mensajePedido)
