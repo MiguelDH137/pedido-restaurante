@@ -37,8 +37,7 @@ const ordenarBebida = (drinkSelected) => {
         const pedidoBebida = drinkSelected !== '' ? `> Su pedido de ${drinkSelected} ha sido entregado en su mesa` : `> No se pidio bebida`
 
         setTimeout(() => {
-            pedidoEstatus ?
-            resolve(cardPedido.insertAdjacentHTML('beforeend', `${pedidoBebida}<br>`)):
+            resolve(cardPedido.insertAdjacentHTML('beforeend', `${pedidoBebida}<br>`))
             reject(`Ah ocurrido un error con la entrega de bebida<br>`)
         }, 1000);
     })
@@ -50,8 +49,7 @@ const ordenarPlato = (foodSelected) => {
         const pedidoPlato = foodSelected !== '' ? `> Su pedido de ${foodSelected} ha sido entregado en su mesa` : `> No se pidio plato<br>`
 
         setTimeout(() => {
-            pedidoEstatus ?
-            resolve(cardPedido.insertAdjacentHTML('beforeend', `${pedidoPlato}<br>`)):
+            resolve(cardPedido.insertAdjacentHTML('beforeend', `${pedidoPlato}<br>`))
             reject(`Ah ocurrido un error con la entrega del plato<br>`)
         }, 2000);
     })
@@ -63,8 +61,7 @@ const ordenarPostre = (dessertSelected) => {
         const pedidoPostre = dessertSelected !== '' ? `> Su pedido de ${dessertSelected} ha sido entregado en su mesa` : `> No se pidio postre<br>`
 
         setTimeout(() => {
-            pedidoEstatus ?
-            resolve(cardPedido.insertAdjacentHTML('beforeend', `${pedidoPostre}<br>`)):
+            resolve(cardPedido.insertAdjacentHTML('beforeend', `${pedidoPostre}<br>`))
             reject(`Ah ocurrido un error con la entrega del postre<br>`)
         }, 3000);
     })
